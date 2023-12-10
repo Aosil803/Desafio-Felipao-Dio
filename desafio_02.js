@@ -1,56 +1,75 @@
-// Função que calcula o saldo de vitorias
+// Função que calcula o saldo de Rankeadas
 function calcularSaldo(vitorias, derrotas) {
     return vitorias - derrotas;
 }
 
-// Função que determina o nível com base no saldo de vitórias e saudações
+// Função que determina o nível com base no saldo de vitórias e a mensagem especial
 function determinarNivel(vitorias) {
-    let saudacoes = "";
+    let mensagemEspecial = "";
 
     switch (true) {
+        case vitorias < 0:
+            mensagemEspecial = "Número de vitórias negativo! Algo de errado aconteceu.";
+            break;
+
         case vitorias < 10:
-            saudacoes = "Bom!!";
+            mensagemEspecial = "Bom!!";
             break;
 
         case vitorias <= 20:
-            saudacoes = "Parabéns!!";
+            mensagemEspecial = "Parabéns!!";
             break;
 
         case vitorias <= 50:
-            saudacoes = "Bom trabalho!!";
+            mensagemEspecial = "Bom trabalho!!";
             break;
 
         case vitorias > 50:
-            saudacoes = "Excelente Pontuação!!";
+            mensagemEspecial = "Excelente Pontuação!!";
             break;
     }
 
     let nivel;
 
-    if (vitorias < 10) nivel = "Ferro";
-    else if (vitorias <= 20) nivel = "Bronze";
-    else if (vitorias <= 50) nivel = "Prata";
-    else if (vitorias <= 80) nivel = "Ouro";
-    else if (vitorias <= 90) nivel = "Diamante";
-    else if (vitorias <= 100) nivel = "Lendário";
-    else nivel = "Imortal";
+    if (vitorias < 0) {
+        nivel = "Sem Classificação";
+    } else if (vitorias < 10) {
+        nivel = "Ferro";
+    } else if (vitorias <= 20) {
+        nivel = "Bronze";
+    } else if (vitorias <= 50) {
+        nivel = "Prata";
+    } else if (vitorias <= 80) {
+        nivel = "Ouro";
+    } else if (vitorias <= 90) {
+        nivel = "Diamante";
+    } else if (vitorias <= 100) {
+        nivel = "Lendário";
+    } else {
+        nivel = "Imortal";
+    }
 
-    return { nivel, saudacoes };
+    return { nivel, mensagemEspecial };
 }
 
 // Função principal que utiliza as funções anteriores
 function calcularNivelEExibirMensagem(vitorias, derrotas) {
-    let saldoVitorias = calcularSaldo(vitorias, derrotas);
-    let { nivel, saudacoes } = determinarNivel(vitorias);
+    const saldoVitorias = calcularSaldo(vitorias, derrotas);
+    const { nivel, mensagemEspecial } = determinarNivel(saldoVitorias);
 
-    // Retorna saudações com o saldo de vitórias e o nivel do jogador
-    return `${saudacoes ? `${saudacoes} ` : ""}O Herói tem um saldo de ${saldoVitorias} e está no nível de ${nivel}.`;
+    // Retorna saudações com o saldo de vitórias, o nível e a mensagem especial
+    return `${mensagemEspecial ? `${mensagemEspecial} ` : ""}O Herói tem um saldo de ${saldoVitorias} e está no nível de ${nivel}.`;
 }
 
 // Exemplo de uso da função principal
-let vitorias = 100; // número de vitórias
-let derrotas = 30; // número de derrotas 
+let vitorias = -5; // número de vitórias negativo
+let derrotas = 10; // número de derrotas 
 let mensagem = calcularNivelEExibirMensagem(vitorias, derrotas);
 
 // mensagem e saída 
 console.log(mensagem);
+
+// mensagem de saida com Exemplo a cima:
+// Excelente Pontuação!! O Herói tem um saldo de 70 e está no nível de Lendário.
+// mensagem de saida com Exemplo de numero de vitórias negativo:
+// Número de vitórias negativo! Algo de errado aconteceu. O Herói tem um saldo de -70 e está no nível de Sem Classificação.
