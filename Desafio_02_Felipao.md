@@ -1,4 +1,4 @@
-# Conforme 2° desafio lançado pelo Felipão da Dio fica aqui o [arquivo_02.JS](https://github.com/Aosil803/Desafio-Felipao-Dio/edit/main/desafio.js)
+# Conforme 2° desafio lançado pelo Felipão da Dio fica aqui o [arquivo_02.JS](https://github.com/Aosil803/Desafio-Felipao-Dio/edit/main/desafio_02.js)
 ## O código também teve um incremento de mais uma variável (saudacoes) e dois laços de repetição no mesmo código e funções. Além de uma mensagem caso o saldo de pontos seja negativo.
 
 # Desafio:
