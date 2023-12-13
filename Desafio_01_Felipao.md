@@ -1,4 +1,4 @@
-# Conforme desafio lançado pelo Felipão da Dio fica aqui o [arquivo.JS](https://github.com/Aosil803/Desafio-Felipao-Dio/edit/main/desafio.js)
+# Conforme desafio lançado pelo Felipão da Dio fica aqui o [arquivo_01.JS](https://github.com/Aosil803/Desafio-Felipao-Dio/edit/main/desafio_01.js)
 ## O código teve um incremento de mais uma variável e dois laços de repetição no mesmo código.
 
 # Desafio:
