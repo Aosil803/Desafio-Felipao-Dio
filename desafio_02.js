@@ -1,3 +1,7 @@
+let vitorias = 70; // número de vitórias 
+let derrotas = 80; // número de derrotas 
+let mensagem = calcularNivelEExibirMensagem(vitorias, derrotas);
+
 // Função que calcula o saldo de Rankeadas
 function calcularSaldo(vitorias, derrotas) {
     return vitorias - derrotas;
@@ -60,16 +64,6 @@ function calcularNivelEExibirMensagem(vitorias, derrotas) {
     // Retorna saudações com o saldo de vitórias, o nível e a mensagem especial
     return `${mensagemEspecial ? `${mensagemEspecial} ` : ""}O Herói tem um saldo de ${saldoVitorias} e está no nível de ${nivel}.`;
 }
-
-// Exemplo de uso da função principal
-let vitorias = -5; // número de vitórias negativo
-let derrotas = 10; // número de derrotas 
-let mensagem = calcularNivelEExibirMensagem(vitorias, derrotas);
-
 // mensagem e saída 
 console.log(mensagem);
 
-// mensagem de saida com Exemplo a cima:
-// Excelente Pontuação!! O Herói tem um saldo de 70 e está no nível de Lendário.
-// mensagem de saida com Exemplo de numero de vitórias negativo:
-// Número de vitórias negativo! Algo de errado aconteceu. O Herói tem um saldo de -70 e está no nível de Sem Classificação.
